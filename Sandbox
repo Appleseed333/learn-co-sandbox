@@ -1,0 +1,28 @@
+class Album
+  
+## Creation of class variable, album_count, which is only accessible to our class(self).
+  @@album_count = 0
+  
+  def initialize
+    @@album_count += 1
+  end
+  
+
+## We need to expose the contents of our class variable to the scope outside of the class!
+## We can do so via a class method!
+  def self.count
+    @@album_count
+  end
+  
+  
+## Setter definition
+  def release_date=(date)
+    @release_date = date
+  end
+
+## Getter definition
+  def release_date
+    @release_date
+  end
+
+end
